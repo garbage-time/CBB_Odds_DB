@@ -18,7 +18,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        install.packages(c('DBI', 'RSQLite', 'oddsapiR', 'dplyr', 'data.table', 'stringr'))
+        Rscript -e "install.packages(c('DBI', 'RSQLite', 'oddsapiR', 'dplyr', 'data.table', 'stringr'))"
 
     - name: Run R script
       run: Rscript store_cbb_odds.R  
