@@ -1,0 +1,25 @@
+name: Run CBB data R script
+
+on:
+  schedule:
+    - cron: '0 9 * * *'  
+
+jobs:
+  run-r-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v2
+
+    - name: Set up R
+      uses: r-lib/actions/setup-r@v1
+
+    - name: Install dependencies
+      run: |
+        install.packages(c('DBI', 'RSQLite', 'oddsapiR', 'dplyr', 'data.table', 'stringr'))
+
+    - name: Run R script
+      run: store_cbb_odds.R  
+      env:
+        API_KEY: ${{ secrets.API_KEY }} 
