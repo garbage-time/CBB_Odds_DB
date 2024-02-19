@@ -1,7 +1,6 @@
 # Load necessary libraries
 library(DBI)
 library(RSQLite)
-remotes::install_github("sportsdataverse/oddsapiR")
 library(oddsapiR)
 library(dplyr)
 library(stringr)
