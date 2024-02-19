@@ -1,7 +1,8 @@
 # Load necessary libraries
 library(DBI)
 library(RSQLite)
-pacman::p_load_current_gh("sportsdataverse/oddsapiR")
+remotes::install_github("sportsdataverse/oddsapiR")
+library(oddsapiR)
 library(dplyr)
 library(stringr)
 
