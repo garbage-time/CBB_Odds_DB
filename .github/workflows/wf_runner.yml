@@ -19,8 +19,9 @@ jobs:
     - name: Install dependencies
       run: |
         Rscript -e "install.packages(c('DBI', 'RSQLite', 'dplyr', 'data.table', 'stringr'))"
-        Rscript -e "if(!requireNamespace('devtools', quietly = TRUE)){install.packages('devtools')}"
-        Rscript -e "devtools::install_github(repo = 'sportsdataverse/oddsapiR')"
+        git clone https://github.com/sportsdataverse/oddsapi
+        cd oddsapi
+        Rscript -e "devtools::install()"
 
     - name: Run R script
       run: Rscript store_cbb_odds.R  
