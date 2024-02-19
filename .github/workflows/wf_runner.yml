@@ -18,7 +18,8 @@ jobs:
 
     - name: Install dependencies
       run: |
-        Rscript -e "install.packages(c('DBI', 'RSQLite', 'oddsapiR', 'dplyr', 'data.table', 'stringr'))"
+        Rscript -e "install.packages(c('DBI', 'RSQLite', 'dplyr', 'data.table', 'stringr'))"
+                -e "if(!requireNamespace('pacman', quietly = TRUE)){install.packages('pacman')} pacman::p_load_current_gh('sportsdataverse/oddsapiR')"
 
     - name: Run R script
       run: Rscript store_cbb_odds.R  
