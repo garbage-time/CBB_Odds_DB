@@ -18,8 +18,8 @@ jobs:
 
     - name: Install dependencies
       run: |
-        Rscript -e "install.packages(c('DBI', 'RSQLite', 'dplyr', 'data.table', 'stringr', 'remotes', 'pacman'))"
-        Rscript -e "remotes::install_github('sportsdataverse/oddsapiR')"
+        Rscript -e "install.packages(c('DBI', 'RSQLite', 'dplyr', 'data.table', 'stringr', 'devtools'))"
+        Rscript -e "devtools::install_github(repo = 'sportsdataverse/oddsapiR')"
 
     - name: Run R script
       run: Rscript store_cbb_odds.R  
