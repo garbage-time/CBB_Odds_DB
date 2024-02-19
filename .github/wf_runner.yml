@@ -21,6 +21,6 @@ jobs:
         install.packages(c('DBI', 'RSQLite', 'oddsapiR', 'dplyr', 'data.table', 'stringr'))
 
     - name: Run R script
-      run: store_cbb_odds.R  
+      run: Rscript store_cbb_odds.R  
       env:
-        API_KEY: ${{ secrets.ODDS_API_KEY}} 
+        ODDS_API_KEY: ${{ secrets.ODDS_API_KEY}} 
