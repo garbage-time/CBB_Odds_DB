@@ -18,7 +18,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        Rscript -e "install.packages(c('DBI', 'RSQLite', 'dplyr', 'data.table', 'stringr', 'rtools', 'curl', 'usethis', 'pkgdown', 'rcmdcheck', 'rversions', 'urlchecker', 'devtools'))"
+        Rscript -e "install.packages(c('DBI', 'RSQLite', 'dplyr', 'data.table', 'stringr', 'rtools', 'cli', 'curl', 'usethis', 'pkgdown', 'rcmdcheck', 'rversions', 'urlchecker', 'devtools'))"
         Rscript -e "devtools::install_github(repo = 'sportsdataverse/oddsapiR')"
 
     - name: Run R script
