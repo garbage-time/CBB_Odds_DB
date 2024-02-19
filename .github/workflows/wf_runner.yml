@@ -18,6 +18,8 @@ jobs:
 
     - name: Install dependencies
       run: |
+        apt-get -y build-dep libcurl4-gnutls-dev
+        apt-get -y install libcurl4-gnutls-dev
         Rscript -e "install.packages(c('DBI', 'RSQLite', 'dplyr', 'data.table', 'stringr', 'rtools', 'cli', 'curl', 'usethis', 'pkgdown', 'rcmdcheck', 'rversions', 'urlchecker', 'devtools'))"
         Rscript -e "devtools::install_github(repo = 'sportsdataverse/oddsapiR')"
 
